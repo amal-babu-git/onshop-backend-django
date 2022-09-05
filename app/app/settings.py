@@ -41,8 +41,12 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOWED_ORIGINS = [
-        "http://localhost:3000/",
-
+        "https://domain.com",
+        "https://api.domain.com",
+        "http://localhost:8080",
+        "http://localhost:3000",
+        "http://127.0.0.1:9000",
+        "http://127.0.0.1:3000",
     ]
 
 # CORS_ALLOW_METHODS = [
@@ -81,10 +85,11 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    "corsheaders.middleware.CorsMiddleware",
+
     'django.middleware.security.SecurityMiddleware',
     'silk.middleware.SilkyMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -197,34 +202,34 @@ DJOSER = {
 
 AUTH_USER_MODEL = 'core.User'
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler'
-        },
-        'file': {
-            'class': 'logging.FileHandler',
-            'filename': 'general.log',
-            'formatter': 'verbose'
-        }
-    },
-    'loggers': {
-        '': {
-            'handler': ['console', 'file'],
-            'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
-        }
-    },
-    'formatters': {
-        'verbose': {
-            'formate': '{asctime} ({levelname}) - {name} - {message}',
-            'style': '{'  # string.formate()
-        }
-    }
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'console': {
+#             'class': 'logging.StreamHandler'
+#         },
+#         'file': {
+#             'class': 'logging.FileHandler',
+#             'filename': 'general.log',
+#             'formatter': 'verbose'
+#         }
+#     },
+#     'loggers': {
+#         '': {
+#             'handler': ['console', 'file'],
+#             'level': os.environ.get('DJANGO_LOG_LEVEL', 'INFO')
+#         }
+#     },
+#     'formatters': {
+#         'verbose': {
+#             'formate': '{asctime} ({levelname}) - {name} - {message}',
+#             'style': '{'  # string.formate()
+#         }
+#     }
 
 
-}
+# }
 
 
 JAZZMIN_SETTINGS = {
