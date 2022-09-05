@@ -45,7 +45,7 @@ else:
         "http://localhost:3000",
         "http://127.0.0.1:9000",
         "http://127.0.0.1:3000",
-        "https://onshopweb.web.app"
+        "http://onshopweb.web.app"
     ]
 
 # CORS_ALLOW_METHODS = [
