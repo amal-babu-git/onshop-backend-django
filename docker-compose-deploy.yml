@@ -35,7 +35,7 @@ services:
       - app
     ports:
       # - 443:8000
-      - 80:8000
+      - 80:80
       - 443:443
     volumes:
       - static-data:/vol/static
