@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(int(os.environ.get('DEBUG', 0)))
 
-ALLOWED_HOSTS = ['api.onshop.amalbabudev.in']
+ALLOWED_HOSTS = ['api.onshop.amalbabudev.in',]
 ALLOWED_HOSTS.extend(
     filter(
         None,
@@ -36,7 +36,7 @@ ALLOWED_HOSTS.extend(
 )
 
 CORS_ALLOW_CREDENTIALS = True
-CSRF_TRUSTED_ORIGINS = ['https://api.onshop.amalbabudev.in/']
+CSRF_TRUSTED_ORIGINS = ['https://api.onshop.amalbabudev.in/',]
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
