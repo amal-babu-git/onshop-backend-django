@@ -36,6 +36,7 @@ ALLOWED_HOSTS.extend(
 )
 
 CORS_ALLOW_CREDENTIALS = True
+CSRF_TRUSTED_ORIGINS = ['https://api.onshop.amalbabudev.in/']
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
