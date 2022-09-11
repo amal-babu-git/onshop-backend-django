@@ -37,3 +37,7 @@ https://github.com/amal-babu-git/django-docker-nginx-uWSGI-ssl-test
 ### Software Development Life Cycle
 
 https://docs.google.com/document/d/1lb-0W3RJ-YEagNKOLtZdr_J0XyDjg2RN/edit?usp=sharing&ouid=108967907844239963293&rtpof=true&sd=true
+
+## Slide
+
+https://docs.google.com/presentation/d/e/2PACX-1vTSeGKCXlAc8rVak4rI6hCTuc7j3tThwE9Ybmx-EARiS2CwFKP64t_T6Gj9lUSiI3HSweF4_I0SLIm2/pub?start=false&loop=false&delayms=3000
