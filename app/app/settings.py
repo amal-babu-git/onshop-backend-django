@@ -47,7 +47,8 @@ else:
         "https://onshopweb.web.app",
         "http://onshopweb.web.app",
         "https://api.onshop.amalbabudev.in",
-        "https://*.amalbabudev.in"
+        "https://*.amalbabudev.in",
+        "https://onshop.amalbabudev.in",
     ]
 
 # CORS_ALLOW_METHODS = [
