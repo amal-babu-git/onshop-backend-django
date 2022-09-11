@@ -43,13 +43,11 @@ if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
 else:
     CORS_ALLOWED_ORIGINS = [
-        "http://localhost:8080",
-        "http://localhost:3000",
-        "http://127.0.0.1:9000",
-        "http://127.0.0.1:3000",
+        "http://127.0.0.1:890",
         "https://onshopweb.web.app",
         "http://onshopweb.web.app",
-        "https://api.onshop.amalbabudev.in"
+        "https://api.onshop.amalbabudev.in",
+        "https://*.amalbabudev.in"
     ]
 
 # CORS_ALLOW_METHODS = [
