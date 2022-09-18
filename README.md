@@ -20,7 +20,8 @@ build with Django REST backend and react frontend.
 * Docker
 * https(SSL) with Letsencrypt-certbot
 
-
+Test user : username : amal123
+            password : test12345
 Live link https://onshopweb.web.app/
 
 Django admin dashboard https://api.onshop.amalbabudev.in/admin/
