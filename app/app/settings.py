@@ -203,7 +203,7 @@ DJOSER = {
 }
 
 AUTH_USER_MODEL = 'core.User'
-
+#FIXME : logging cause error
 # LOGGING = {
 #     'version': 1,
 #     'disable_existing_loggers': False,

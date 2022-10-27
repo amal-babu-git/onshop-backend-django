@@ -1,6 +1,3 @@
-
-
-from cgitb import lookup
 from django import views
 from django.urls import path, include
 from rest_framework_nested import routers

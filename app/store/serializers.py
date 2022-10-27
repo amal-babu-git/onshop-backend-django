@@ -217,14 +217,14 @@ class OrderSerializer(serializers.ModelSerializer):
                   'is_delivered', 'is_shipped', 'is_cancelled', 'payment']
 
 
-# FIXME : TODO :remove later
+# FIXME: TODO :remove later
 class UpdateOrderSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Order
         fields = ['is_delivered']
 
-# FIXME : TODO : Not done
+# FIXME: TODO : Not done
 
 
 class CancelOrderSerializer(serializers.ModelSerializer):

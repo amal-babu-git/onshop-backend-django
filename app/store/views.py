@@ -130,7 +130,7 @@ class CartItemViewSet(ModelViewSet):
         return {'cart_id': self.kwargs['cart_pk']}
 
 
-# TODO: add adress post method FIXME: handle permission
+# TODO : add adress post method FIXME : handle permission
 class AddressViewSet(ModelViewSet):
 
     http_method_names = ['get', 'put', 'post', 'delete']
