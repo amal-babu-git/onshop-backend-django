@@ -46,7 +46,6 @@ Flask==2.1.2
 Flask-BasicAuth==0.2.0
 Flask-Cors==3.0.10
 flower==1.2.0
-gevent==21.12.0
 geventhttpclient==1.5.3
 gprof2dot==2022.7.29
 greenlet==1.1.2
