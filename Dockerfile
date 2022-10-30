@@ -12,6 +12,7 @@ EXPOSE 8000
 
 RUN python -m venv /py && \ 
     /py/bin/pip install --upgrade pip && \
+    /py/bin/pip install --upgrade pip setuptools && \
     apk add --update --no-cache postgresql-client && \
     apk add --update --no-cache --virtual .tmp-deps \
         build-base postgresql-dev musl-dev linux-headers && \
