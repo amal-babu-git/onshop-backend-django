@@ -1,4 +1,4 @@
-FROM python:3.11-alpine3.16
+FROM python:3.10-alpine3.16
 LABEL maintainer="amalbabu1200@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
@@ -15,8 +15,6 @@ RUN python -m venv /py && \
     apk add --update --no-cache postgresql-client && \
     apk add --update --no-cache --virtual .tmp-deps \
         build-base postgresql-dev musl-dev linux-headers && \
-    /py/bin/pip install uwsgi && \
-    /py/bin/pip install pillow --use-pep517 && \
     /py/bin/pip install --upgrade -r /requirements.txt && \
     apk del .tmp-deps && \
     adduser --disabled-password --no-create-home app && \
