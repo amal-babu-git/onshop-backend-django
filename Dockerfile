@@ -15,9 +15,10 @@ RUN python -m venv /py && \
     apk add --update --no-cache postgresql-client && \
     apk add --update --no-cache --virtual .tmp-deps \
         build-base postgresql-dev musl-dev linux-headers && \
-    /py/bin/pip3 uninstall pillow && \
-    /py/bin/pip3 install pillow  && \
-    /py/bin/pip3 install -r /requirements.txt && \
+    /py/bin/pip install --upgrade pip setuptools wheel && \
+    /py/bin/pip uninstall pillow && \
+    /py/bin/pip install pillow  && \
+    /py/bin/pip install -r /requirements.txt && \
     apk del .tmp-deps && \
     adduser --disabled-password --no-create-home app && \
     mkdir -p /vol/web/static && \
