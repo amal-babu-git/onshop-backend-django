@@ -1,4 +1,4 @@
-FROM python:3.10-alpine3.16
+FROM python:3.10-alpine3.15
 LABEL maintainer="amalbabu1200@gmail.com"
 
 ENV PYTHONUNBUFFERED 1
@@ -15,6 +15,7 @@ RUN python -m venv /py && \
     apk add --update --no-cache postgresql-client && \
     apk add --update --no-cache --virtual .tmp-deps \
         build-base postgresql-dev musl-dev linux-headers && \
+    /py/bin/pip uninstall pillow && \
     /py/bin/pip install -r /requirements.txt && \
     apk del .tmp-deps && \
     adduser --disabled-password --no-create-home app && \
