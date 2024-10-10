@@ -3,7 +3,7 @@
 OnShop is a e-commerce web application
 build with Django REST backend and react frontend.
 
-> This is frontend repo
+> This is backend repo
 
 ## Main Frontend Packages 
 * ReactJS
