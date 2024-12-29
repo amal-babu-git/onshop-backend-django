@@ -37,7 +37,7 @@ ALLOWED_HOSTS.extend(
 
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = [
-    'https://api.onshop.amalbabudev.in/', 'https://*.amalbabudev.in/', 'https://*.amazonaws.com', 'http://*.amalbabudev.in']
+    'https://api.onshop.amalbabudev.in/', 'https://*.amalbabu.live/', 'https://*.amazonaws.com', "onshop.amalbabu.live"]
 
 if DEBUG:
     CORS_ALLOW_ALL_ORIGINS = True
