@@ -39,14 +39,14 @@ class ProductViewSet(ModelViewSet):
     ordering_fields = ['unit_price', 'last_update']
     pagination_class = DefaultPagination
 
-    # overrid
 
     def get_serializer_context(self):
         return {'request': self.request}
 
-    # overrid destroy to delete
+    # override destroy to delete
     def destroy(self, request, *args, **kwargs):
-        if Product.objects.filter(product_id=kwargs['pk']).count() > 0:
+        product = get_object_or_404(Product, pk=kwargs['pk'])
+        if Product.orderitems.filter(product_id=kwargs['pk']).count() > 0:
             return Response({'error': "Can't delete , product associated with an order"},
                             status=status.HTTP_405_METHOD_NOT_ALLOWED)
 
