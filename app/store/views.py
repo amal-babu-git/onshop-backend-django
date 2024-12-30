@@ -45,11 +45,9 @@ class ProductViewSet(ModelViewSet):
 
     # override destroy to delete
     def destroy(self, request, *args, **kwargs):
-        product = get_object_or_404(Product, pk=kwargs['pk'])
-        if Product.orderitems.filter(product_id=kwargs['pk']).count() > 0:
+        if OrderItem.objects.filter(product_id=kwargs['pk']).count() > 0:
             return Response({'error': "Can't delete , product associated with an order"},
                             status=status.HTTP_405_METHOD_NOT_ALLOWED)
-
         return super().destroy(request, *args, **kwargs)
 
 
