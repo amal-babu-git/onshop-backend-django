@@ -19,7 +19,6 @@ class CollectionSerializer(serializers.ModelSerializer):
 
 
 class ProductImageSerializer(serializers.ModelSerializer):
-
     def create(self, validated_data):
         product_id = self.context['product_id']
         return ProductImage.objects.create(product_id=product_id, **validated_data)
@@ -31,7 +30,6 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     images = ProductImageSerializer(many=True, read_only=True)
-
     collection = serializers.StringRelatedField()
 
     class Meta:
@@ -48,7 +46,6 @@ class ProductSerializer(serializers.ModelSerializer):
 
 
 class ReviewSerializer(serializers.ModelSerializer):
-
     product = serializers.CharField(read_only=True)
 
     # Overriding create methode and save data manually with product id
@@ -65,14 +62,12 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 # this for show product details in CartItemSerializer
 class SimpleProductSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Product
         fields = ['id', 'title', 'unit_price']
 
 
 class CartItemSerializer(serializers.ModelSerializer):
-
     product = SimpleProductSerializer()
     # custom field for show total price
     total_price = serializers.SerializerMethodField()
@@ -88,7 +83,6 @@ class CartItemSerializer(serializers.ModelSerializer):
 
 
 class CartSerializer(serializers.ModelSerializer):
-
     # We dont want to send id to server, just read from server
     id = serializers.UUIDField(read_only=True)
     items = CartItemSerializer(many=True, read_only=True)
@@ -104,7 +98,6 @@ class CartSerializer(serializers.ModelSerializer):
 
 
 class AddCartItemSerilizer(serializers.ModelSerializer):
-
     # product_id declaration
     product_id = serializers.IntegerField()
 
@@ -141,7 +134,6 @@ class AddCartItemSerilizer(serializers.ModelSerializer):
 
 
 class UpdateCartItemSerilizer(serializers.ModelSerializer):
-
     class Meta:
         model = CartItem
         fields = ['quantity']
@@ -149,7 +141,6 @@ class UpdateCartItemSerilizer(serializers.ModelSerializer):
 
 # FIXME: Working Test
 class AddressSerializer(serializers.ModelSerializer):
-
     customer = serializers.CharField(read_only=True)
 
     class Meta:
@@ -161,7 +152,6 @@ class AddressSerializer(serializers.ModelSerializer):
 
 
 class AddAddressSerializer(serializers.ModelSerializer):
-
     customer = serializers.CharField(read_only=True)
 
     def create(self, validated_data):
@@ -175,7 +165,6 @@ class AddAddressSerializer(serializers.ModelSerializer):
 
 
 class UpdateAddressSerializer(serializers.ModelSerializer):
-
     customer = serializers.CharField(read_only=True)
 
     class Meta:
@@ -185,7 +174,6 @@ class UpdateAddressSerializer(serializers.ModelSerializer):
 
 
 class CustomerSerializer(serializers.ModelSerializer):
-
     user_id = serializers.IntegerField(read_only=True)
     # username=serializers.ReadOnlyField(read_only=True)
     address = AddressSerializer(read_only=True, many=True)
@@ -197,7 +185,6 @@ class CustomerSerializer(serializers.ModelSerializer):
 
 
 class OrderItemSerializer(serializers.ModelSerializer):
-
     product = SimpleProductSerializer()
 
     class Meta:
@@ -207,7 +194,6 @@ class OrderItemSerializer(serializers.ModelSerializer):
 
 # FIXME: 94 quries executing while send get
 class OrderSerializer(serializers.ModelSerializer):
-
     items = OrderItemSerializer(many=True)
     payment = PaymentSerializer(many=True)
 
@@ -225,8 +211,6 @@ class UpdateOrderSerializer(serializers.ModelSerializer):
         fields = ['is_delivered']
 
 # FIXME: TODO : Not done
-
-
 class CancelOrderSerializer(serializers.ModelSerializer):
 
     class Meta:

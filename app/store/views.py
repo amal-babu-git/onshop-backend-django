@@ -52,7 +52,6 @@ class ProductViewSet(ModelViewSet):
 
 
 class CollectionViewSet(ModelViewSet):
-
     serializer_class = CollectionSerializer
     queryset = Collection.objects.annotate(
         product_count=Count('products')).all().order_by('title')
@@ -71,7 +70,6 @@ class CollectionViewSet(ModelViewSet):
 
 # TODO: update http methos when client app have fecility to update comment
 class ReviewViewSet(ModelViewSet):
-
     # permission_classes=[IsAuthenticated]
     http_method_names = ['get', 'post',
                          'options', 'headers']  # +['put', 'delete', ]
@@ -106,7 +104,6 @@ class CartViewSet(CreateModelMixin,  # create cart with id, pass post request wi
 
 
 class CartItemViewSet(ModelViewSet):
-
     # must be lowercase in the list
     http_method_names = ['get', 'post', 'patch', 'delete']
 
@@ -130,7 +127,6 @@ class CartItemViewSet(ModelViewSet):
 
 # TODO : add adress post method FIXME : handle permission
 class AddressViewSet(ModelViewSet):
-
     http_method_names = ['get', 'put', 'post', 'delete']
     permission_classes = [IsAuthenticated]
 
@@ -149,7 +145,6 @@ class AddressViewSet(ModelViewSet):
 
 
 class CustomerViewSet(ModelViewSet):
-
     queryset = Customer.objects.prefetch_related('address').all()
     serializer_class = CustomerSerializer
     # Allow all operation to admin user. TODO: FullDjangoModelPermission (our customized permission class ) can also use here
@@ -220,7 +215,6 @@ class OrderViewSet(ModelViewSet):
 
 
 class ProductImageViewSet(ModelViewSet):
-
     serializer_class = ProductImageSerializer
 
     def get_queryset(self):
