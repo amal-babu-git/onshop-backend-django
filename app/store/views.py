@@ -115,7 +115,6 @@ class CartItemViewSet(ModelViewSet):
         return CartItemSerializer
 
     def get_queryset(self):
-
         return CartItem.objects \
             .filter(cart_id=self.kwargs['cart_pk']) \
             .select_related('product')
@@ -125,7 +124,7 @@ class CartItemViewSet(ModelViewSet):
         return {'cart_id': self.kwargs['cart_pk']}
 
 
-# TODO : add adress post method FIXME : handle permission
+# TODO : add address post method FIXME : handle permission
 class AddressViewSet(ModelViewSet):
     http_method_names = ['get', 'put', 'post', 'delete']
     permission_classes = [IsAuthenticated]

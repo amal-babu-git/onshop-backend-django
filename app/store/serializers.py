@@ -149,8 +149,6 @@ class AddressSerializer(serializers.ModelSerializer):
                   'house_no', 'land_mark', 'phone_no', 'customer']
 
 # FIXME: Testing
-
-
 class AddAddressSerializer(serializers.ModelSerializer):
     customer = serializers.CharField(read_only=True)
 
